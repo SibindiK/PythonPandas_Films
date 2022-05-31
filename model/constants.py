@@ -1,0 +1,1 @@
+IMDB_RATINGS_SOURCE = "http://bit.ly/imdbratings"
