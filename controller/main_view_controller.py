@@ -21,7 +21,13 @@ class MainViewController(qtw.QMainWindow, Ui_MainWindow):
 
 #filters data according to user's selection    
     def set_selection(self):
-        pass
+        f_df = self.myfilms.filter_df(self.genreComboBox.currentText(),
+                self.ratingsComboBox.currentText(), 
+                self.lineEdit.text())
+        self.clear_selection_clicked()
+        f_mod = DFModel(f_df)
+        self.mainTableView.setModel(f_mod)
+
 
 #loads films dataset and displays data on table view     
     def load_df_btn_clicked(self):
